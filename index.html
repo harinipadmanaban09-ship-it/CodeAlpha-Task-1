@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini E-Commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">ShopZone</div>
+    <ul>
+      <li><button onclick="showPage('home')">Home</button></li>
+      <li><button onclick="showPage('cart')">Cart</button></li>
+      <li><button onclick="showPage('login')">Login</button></li>
+      <li><button onclick="showPage('register')">Register</button></li>
+    </ul>
+  </nav>
+
+  <!-- Pages -->
+  <div id="home" class="page">
+    <h1>Products</h1>
+    <div id="products" class="product-grid"></div>
+  </div>
+
+  <div id="cart" class="page hidden">
+    <h1>Shopping Cart</h1>
+    <div id="cartItems"></div>
+    <button onclick="checkout()">Checkout</button>
+  </div>
+
+  <div id="login" class="page hidden">
+    <h1>Login</h1>
+    <form onsubmit="login(event)">
+      <input type="email" placeholder="Email" id="loginEmail" required>
+      <input type="password" placeholder="Password" id="loginPassword" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <div id="register" class="page hidden">
+    <h1>Register</h1>
+    <form onsubmit="register(event)">
+      <input type="text" placeholder="Name" id="regName" required>
+      <input type="email" placeholder="Email" id="regEmail" required>
+      <input type="password" placeholder="Password" id="regPassword" required>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
